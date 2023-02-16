@@ -13,7 +13,7 @@ var3 = "Where_the_Wild_Things_Are"
 
 
 # TODO: .lower()
-# Goodbye :)
+# Hello Goodbye :)
 
 # TODO: .lstrip()
 

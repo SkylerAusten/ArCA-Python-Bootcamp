@@ -1,0 +1,4 @@
+name = list of names
+loop from first name to last name:
+    if title case:
+        print name
