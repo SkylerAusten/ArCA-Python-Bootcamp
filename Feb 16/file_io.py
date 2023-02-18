@@ -1,19 +1,19 @@
-f = open("file.txt", "r")
-print(f.read())
-print(f.read(2))
+f = open("Feb 16/file.txt", "r")
+# print(f.read())
+# print(f.read(2))
 print(f.readline())
 
 for line in f:
-  print(line)
+    print(line)
 
 f.close()
 
 
-f = open("file.txt", "w")
+f = open("Feb 16/file.txt", "a")
 f.write("Line 4")
 f.close()
 
-f = open("file.txt", "r")
+f = open("Feb 16/file.txt", "r")
 print(f.read())
 f.close()
 
