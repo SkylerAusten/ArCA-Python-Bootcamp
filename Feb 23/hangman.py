@@ -1,46 +1,57 @@
 # Import the random library.
+import random
 
-# Create a function for printing a list of characters as a string.
+def list_to_string(list):
+    output = ""
+    for item in list:
+        output += item
+    
+    return output
 
-# Create the driver function.
 
-    # Randomly select a word for the game.
-    # Create a list of underscores/blanks to be filled in.
+# Define driver function.
+def main():
 
-    # Create variables for total guesses, wrong guesses, and guessed letters.
+    # Randomly pick a word from a wordlist.
+    wordlist = ["cherry", "lamp", "posters"]
+    word = random.choice(wordlist)
+    
+    # Instantiate a blanks list.
+    blanks = ["_"] * len(word)
 
-    # Use a while loop to keep playing until the word is found.
+    guessed_letters = []
+    guess_count = 0
 
-        # Take in user input.
+    # Loop user letter guesses.
+    while True:
 
-        # Check if the input is more than one character.
+        guess_letter = input("Guess a letter: ")
 
-        # Check if the character has already been used.
+        # Check the user only entered one letter.
+        if len(guess_letter) > 1:
+            print("You can only enter one letter!\n")
+            continue
 
-        # Add the letter to the list of guessed letters.
+        # Check if letter has already been used.
+        if guess_letter in guessed_letters:
+            print("You've already used that letter!\n")
+            continue
 
-        # Initialize a loop counter index and a found boolean.
- 
-        # Loop through the guessed word.
+        guess_count = guess_count + 1
+        guessed_letters.append(guess_letter)
 
-            # Check if the input character matches the word's letters.
+        index = 0
+        for character in word:
+            if guess_letter == character:
+                blanks[index] = guess_letter
 
-                # If it does, update the blanks list.
+            index += 1
 
-                # Update the "character found" boolean.
+        print("Word:", list_to_string(blanks))
 
-            # Increment the character index.
+        # Check if word has been found.
+        if not ("_" in blanks):
+            print("Word found!\n")
+            return
 
-        # Display a message for if a character wasn't found.
-
-            # Increment the number of wrong guesses.
-
-        # Display a message for if a character was found.
-
-        # Determine if the player has won to break the loop.
-
-            # Report the user's guess counts.
-
-# Execute the driver function.
-
-# Bonus: How can we pull the wordlist from a "dictionary" file?
+main()
