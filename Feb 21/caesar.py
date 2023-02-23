@@ -1,5 +1,8 @@
 def user_input():
-    plaintext = input("Plaintext Message: ")
+    text_file = open("plaintext.txt", "r")
+    plaintext = text_file.read()
+    text_file.close()
+
     key = int(input("Secret Key: "))
 
     return plaintext, key
@@ -35,7 +38,10 @@ def encryption(plaintext, key):
     return ciphertext
 
 def message_output(ciphertext):
-    print("Ciphertext Message: ", ciphertext)
+    text_file = open("ciphertext.txt", "w")
+    text_file.write(ciphertext)
+    text_file.close()
+
 
 def main():
     plaintext_message, key = user_input()
