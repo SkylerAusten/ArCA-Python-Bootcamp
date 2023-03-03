@@ -9,11 +9,9 @@ pokemon_file = open("pokemon.txt", "w")
 
 for line in lines:
   if "<td>" in line:
-    x = line.replace("</td><td>", "  ")
-    x = x.strip("<tr><td>")
-    x = x.strip("<td></tr>")
-    # list = x.split("  ")
-    # print(list)
+    details = line.replace("</td><td>", "\t")
+    details = details.strip("<tr><td>")
+    details = details.strip("<td></tr>")
 
     pokemon_file.write(x + "\n")
   
