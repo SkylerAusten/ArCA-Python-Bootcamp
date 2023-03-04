@@ -11,7 +11,7 @@ import math
 categories = ['Attack', 'Hp', 'Sp. Atk', 'Sp. Def','Speed', 'Defense']
 bg = [260, 260, 260, 260, 260, 260, 260]
 
-number_of_categories = 7
+number_of_categories = 6
 
 pi = math.pi
 angles = [((n+0.5)/number_of_categories)*(2*pi) for n in range(number_of_categories)]
